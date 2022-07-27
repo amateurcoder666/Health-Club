@@ -36,7 +36,7 @@ class MyCustomReporter {
     this._options = options;
     
     this.outputFiles = {
-      business: "./output_revised.txt",
+      functional: "./output_revised.txt",
       boundary: "./output_boundary_revised.txt",
       exception: "./output_exception_revised.txt",
       xml: "./yaksha-test-cases.xml"
@@ -191,7 +191,7 @@ const prepareXmlFile = function (xml, result) {
   var testCaseType = result.fullName.trim().split(" ")[1];
 
   xml.ele('cases', {"xmlns:java": "http://java.sun.com", "xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", "xsi:type":"java:com.assessment.data.TestCase"})
-    .ele('test-case-type', capitalize(testCaseType == 'business' ? "functional" : testCaseType == 'exception' ? "exception" : "boundary")).up()
+    .ele('test-case-type', capitalize(testCaseType == 'functional' ? "functional" : testCaseType == 'exception' ? "exception" : "boundary")).up()
     .ele('expected-ouput', true).up()
     .ele('name', camelCase(result.fullName.trim())).up()
     .ele('weight', 2).up()
