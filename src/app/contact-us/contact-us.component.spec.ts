@@ -21,7 +21,7 @@ describe('ContactUsComponent', () => {
     fixture.detectChanges();
   });
   
-  describe('business', () => {
+  describe('functional', () => {
     it("should submit form", () => {
       expect(component.contactForm.valid).toBeFalsy();
       component.contactForm.controls["firstname"].setValue("testname");
