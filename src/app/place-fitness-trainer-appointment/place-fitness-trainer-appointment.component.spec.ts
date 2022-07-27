@@ -290,7 +290,7 @@ describe('PlaceFitnessTrainerAppointmentComponent', () => {
   })
 
 
-  describe("business", ()=>{
+  describe("functional", ()=>{
     
     it("should be Place gift card order", inject([HttpTestingController, UserService], (httpMock: HttpTestingController, dataService: UserService) => {
   
