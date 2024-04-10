@@ -1,3 +1,36 @@
+<div *ngIf="!(appointmentData && length > 0)">
+    <h1 class ='text-center'>No appointments found!! </h1>
+</div>
+
 <div>
-    View Appointment...
+    <table class="table table-hover" *ngIf="appointmentData && length > 0">
+        <thead>
+          <tr>
+            <th scope="col">SNo.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">email</th>
+            <th scope="col">Age</th>
+            <th scope="col">Complete Address</th>
+            <th scope="col">Trainer Preference</th>
+            <th scope="col">Physio Required</th>
+            <th scope="col">Package</th>
+            <th scope="col">Total Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointmentData" >
+            <th scope="row">{{ appointment.id}}</th>
+            <td>{{appointment.firstname }} {{ appointment.lastname }}</td>
+            <td>{{appointment.phonenumber}}</td>
+            <td>{{appointment.email}}</td>
+            <td>{{appointment.age}}</td>
+            <td>{{appointment.streetaddress}},{{appointment.city}}-{{appointment.pincode}},{{appointment.country}},{{appointment.state}},{{appointment.country}}</td>
+            <td>{{appointment.trainerpreference}}</td>
+            <td>{{appointment.physiotherapist}}</td>
+            <td>{{appointment.packages}}</td>
+            <td>{{appointment.inr}}.{{appointment.paisa}}</td>
+        </tr>
+        </tbody>
+      </table>
 </div>

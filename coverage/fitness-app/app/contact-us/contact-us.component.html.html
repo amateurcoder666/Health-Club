@@ -111,7 +111,27 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,68 +185,108 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-&lt;form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate&gt;
-    &lt;label&gt;Contact-us&lt;/label&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="exampleInputfirstname"&gt;First Name&lt;/label&gt;
-        &lt;input type="text" class="form-control" formControlName="firstname" placeholder="First Name"&gt;
-        &lt;small class="form-text text-muted"
-            *ngIf="contactForm.controls.firstname.touched &amp;&amp; contactForm.controls.firstname.errors?.required"&gt;
-            Please enter first name.!
-        &lt;/small&gt;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Contact Page&lt;/title&gt;
+    &lt;link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    /&gt;
+    &lt;style&gt;
+      /* Custom style to set the textarea height equal to col-1 height */
+      #message {
+        height: 100%;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container mt-5"&gt;
+      &lt;h2 class="text-center mb-4"&gt;Drop a message&lt;/h2&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+          &lt;form&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="name"&gt;Name&lt;/label&gt;
+              &lt;input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Enter your name"
+              /&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="email"&gt;Email&lt;/label&gt;
+              &lt;input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter your email"
+              /&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="phone"&gt;Phone Number&lt;/label&gt;
+              &lt;input
+                type="tel"
+                class="form-control"
+                id="phone"
+                placeholder="Enter your phone number"
+              /&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6"&gt;
+          &lt;form&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="message"&gt;Message&lt;/label&gt;
+              &lt;textarea
+                class="form-control"
+                id="message"
+                rows="8"
+                placeholder="Write your message here"
+              &gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="row mt-3"&gt;
+        &lt;div class="col text-right"&gt;
+          &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-&nbsp;
-    &lt;div class="form-group"&gt;
-        &lt;label for="exampleInputlastname"&gt;Last Name&lt;/label&gt;
-        &lt;input type="text" class="form-control" formControlName="lastname" placeholder="Last Name"&gt;
-        &lt;small class="form-text text-muted"
-            *ngIf="contactForm.controls.lastname.touched &amp;&amp; contactForm.controls.lastname.errors?.required"&gt;
-            Please enter last name.!
-        &lt;/small&gt;
-    &lt;/div&gt;
-&nbsp;
-&nbsp;
-    &lt;div class="form-group"&gt;
-        &lt;label for="exampleInputphonenumber"&gt;Phone Number&lt;/label&gt;
-        &lt;input type="number" class="form-control" formControlName="phonenumber" placeholder="Phone Number"&gt;
-        &lt;small class="form-text text-muted"
-            *ngIf="contactForm.controls.phonenumber.touched &amp;&amp; contactForm.controls.phonenumber.errors?.required"&gt;
-            Please enter phone number.!
-        &lt;/small&gt;
-    &lt;/div&gt;
-&nbsp;
-    &lt;div class="form-group"&gt;
-        &lt;label for="exampleInputemail"&gt;Email&lt;/label&gt;
-        &lt;input type="email" class="form-control" formControlName="email" placeholder="Eamil"&gt;
-        &lt;small class="form-text text-muted"
-            *ngIf="contactForm.controls.email.touched &amp;&amp; contactForm.controls.email.errors?.required"&gt;
-            Please enter email.!
-        &lt;/small&gt;
-        &lt;small class="form-text text-muted"
-            *ngIf="contactForm.controls.email.touched &amp;&amp; contactForm.controls.email.errors?.email"&gt;
-            Enter the valid email .!
-        &lt;/small&gt;
-    &lt;/div&gt;
-    &lt;div class="form-group"&gt;
-        &lt;label for="exampleInputmessage"&gt;Message&lt;/label&gt;
-        &lt;textarea type="text" class="form-control" formControlName="message" placeholder="Message"&gt;&lt;/textarea&gt;
-        &lt;small class="form-text text-muted"
-            *ngIf="contactForm.controls.message.touched &amp;&amp; contactForm.controls.message.errors?.required"&gt;
-            Please enter message.!
-        &lt;/small&gt;
-&nbsp;
-    &lt;/div&gt;
-    &lt;button type="submit" &gt;Submit&lt;/button&gt;
-&nbsp;
-&lt;/form&gt;</pre></td></tr></table></pre>
+  &lt;/body&gt;
+&lt;/html&gt;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 07 2022 11:59:03 GMT+0530 (India Standard Time)
+                at Wed Apr 10 2024 05:25:41 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

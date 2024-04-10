@@ -1,3 +1,128 @@
-<div>
-    Place fiteness Trainer appointment...
+<form class = "offset-sm-1 mt-3 " style = "margin-right: 60px" #apptForm (ngSubmit)="onSubmit(apptForm)" >
+    <div class="row mb-3">
+        <div class="col">
+            <label for="name"  class="form-label">Name</label>
+            <input type="text" class="form-control"  name = "name" [(ngModel)] = "name" id="name" #nameField ="ngModel" required>
+            <div class ="alert alert-danger" [hidden]="nameField.valid || nameField.pristine"> Name field is required</div>
+        </div>
+        <div class="col">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" name = "age" [(ngModel)] = "age" id="age" #ageField ="ngModel" required>
+            <div class ="alert alert-danger" [hidden]="ageField.valid || ageField.pristine"> age field is required</div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name = "mod" [(ngModel)] = "email"  id="email" #emailField = "ngModel" required>
+        </div>
+        <div class="col">
+            <label for="mobile" class="form-label">Mobile No.</label>
+            <input type="tel" class="form-control" name = "mobno" [(ngModel)] = "mob" id="mobile" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="address1" class="form-label">Address Line 1</label>
+            <input type="text" class="form-control" name = "add1"  [(ngModel)] = "add1" id="address1" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="address2" class="form-label">Address Line 2</label>
+            <input type="text" class="form-control" name = "add2"  [(ngModel)] = "add2" id="address2" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control"  name = "city" [(ngModel)] = "city" id="city" required>
+        </div>
+        <div class="col">
+            <label for="state" class="form-label">State</label>
+            <input type="text" class="form-control"  name = "state" [(ngModel)] = "state" id="state" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" id="country" name = "country" [(ngModel)] = "country" required>
+        </div>
+        <div class="col">
+            <label for="pincode" class="form-label">Pin Code</label>
+            <input type="text" class="form-control" id="pincode" name = "pincode" [(ngModel)] = "pin" required>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="trainer" class="form-label">Trainer Preference:</label>
+        <div class="form-check form-check-inline ms-3">
+            <input class="form-check-input" type="radio" [(ngModel)] = "pref" name="trainerPreference" id="maleTrainer" value="male" required>
+            <label class="form-check-label" for="maleTrainer">
+                Male Trainer
+            </label>
+        </div>
+        <div class="form-check form-check-inline ms-3">
+            <input class="form-check-input" type="radio" [(ngModel)] = "pref" name="trainerPreference" id="femaleTrainer" value="female" required>
+            <label class="form-check-label" for="femaleTrainer">
+                Female Trainer
+            </label>
+        </div>
+        <div class="form-check form-check-inline ms-3">
+            <input class="form-check-input" type="radio" [(ngModel)] = "pref" name="trainerPreference" id="noPreference" value="noPreference" checked required>
+            <label class="form-check-label" for="noPreference">
+                No Preference
+            </label>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <label for="trainer" class="form-label">Do you need Physiotherapist?</label>
+            <div class="row mb-3">
+            <div class="col-sm-10 col-md-6">
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" [(ngModel)] = "physio" name="needPhysiotherapy" id="yesPhysiotherapy" value="yes" (input)="onPhysio($event)" required>
+                <label class="form-check-label" for="yesPhysiotherapy">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" [(ngModel)] = "physio" name="needPhysiotherapy" id="noPhysiotherapy" value="no" (input)="onPhysio($event)" required>
+                <label class="form-check-label" for="noPhysiotherapy">No</label>
+                </div>
+            </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-10 col-md-6">
+            <label for="packageSelect">Select a Package:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [(ngModel)] = "pack" name="packageSelect" id="oneTime" value="oneTime" (change)="onPackageChange($event)" required>
+              <label class="form-check-label" for="oneTime">One Time Appointment (Rs. 500/-)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio"  [(ngModel)] = "pack" name="packageSelect" id="fourWeeks" value="fourSess" (change)="onPackageChange($event)" required>
+              <label class="form-check-label" for="fourWeeks">4 Sessions Per Week (Rs. 400/- per session)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [(ngModel)] = "pack" name="packageSelect" id="fiveWeeks" value="fiveSess" (change)="onPackageChange($event)" required>
+              <label class="form-check-label" for="fiveWeeks">5 Sessions Per Week (Rs. 300/- per session)</label>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3" *ngIf="selectedPackage === 'fourSess' || selectedPackage === 'fiveSess'">
+        <label for="inputWeek" class="col-sm-2 col-form-label">Week</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="inputWeek"  (input)="calculateAmount()" name = "weeks" [(ngModel)]="weeks" >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputAmount" class="col-sm-2 col-form-label" >Amount</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" name = "amount" [(ngModel)]="amount"  id="inputAmount" disabled>
+        </div>
+      </div>
+    <div class="row mb-3">
+            <div class="text-end"> <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    <div *ngIf="successMessageVisible" class="success-message">Success! Your data has been submitted.</div>
+    <div *ngIf="errorMessageVisible" class="error-message">Error! There was a problem submitting your data.</div>
 </div>
+</form>
+    

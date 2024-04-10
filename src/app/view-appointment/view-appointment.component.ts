@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../_services/user.service';
 
 
 @Component({
@@ -8,15 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class ViewAppointmentComponent implements OnInit {
 
   
-  constructor() { }
-
+  constructor(private appointment: UserService ) { }
+  appointmentData ={};
+  length = 0;
 
 
   ngOnInit() {
-    
+    this.getfitness();
   }
 
   getfitness() {
-
+    this.appointment.getfitnessdata().subscribe((allData) =>{
+     this.appointmentData = allData;
+     this.length = Object(this.appointmentData).length; 
+    });
   }
 }

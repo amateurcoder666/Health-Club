@@ -35,7 +35,60 @@
       "inr": 10000,
       "paisa": 10,
       "id": 2
+    },
+    {
+      "inr": 1600,
+      "paisa": 0,
+      "streetaddress": "99/8, Diamond Harbour Road , Sakherbazaar,2a/b",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "country": "India",
+      "pincode": "700008",
+      "phonenumber": 9007471029,
+      "email": "daskaustav381@gmail.com",
+      "firstname": "Kaustav",
+      "lastname": "Das",
+      "age": 20,
+      "trainerpreference": "male",
+      "physiotherapist": "no",
+      "packages": "400",
+      "id": 3
+    },
+    {
+      "inr": 500,
+      "paisa": 0,
+      "streetaddress": "99/8, Diamond Harbour Road , Sakherbazaar,2a/b",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "country": "India",
+      "pincode": "700008",
+      "phonenumber": 9007471029,
+      "email": "daskaustav381@gmail.com",
+      "firstname": "Shruti",
+      "lastname": "Das",
+      "age": 22,
+      "trainerpreference": "female",
+      "physiotherapist": "no",
+      "packages": "500",
+      "id": 4
+    },
+    {
+      "inr": 6400,
+      "paisa": 0,
+      "streetaddress": "99/8, Diamond Harbour Road , Sakherbazaar,2a/b",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "country": "India",
+      "pincode": "700008",
+      "phonenumber": 9007471029,
+      "email": "daskaustav381@gmail.com",
+      "firstname": "Kaustav",
+      "lastname": "Das",
+      "age": 45,
+      "trainerpreference": "female",
+      "physiotherapist": "no",
+      "packages": "400",
+      "id": 5
     }
-    
   ]
 }
